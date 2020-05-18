@@ -24,7 +24,7 @@
     "office-ui-fabric-react": "6.189.2",
     "react": "16.8.5",
     "react-dom": "16.8.5",
-    "three": "^0.116.1"
+    "three": "0.116.1"
   },
   "resolutions": {
     "@types/react": "16.8.8"
@@ -37,8 +37,8 @@
     "@microsoft/sp-webpart-workbench": "1.10.0",
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.38",
-    "ajv": "~5.2.2",
-    "file-loader": "^6.0.0",
-    "gulp": "~3.9.1"
+    "ajv": "5.2.5",
+    "file-loader": "6.0.0",
+    "gulp": "3.9.1"
   }
 }
