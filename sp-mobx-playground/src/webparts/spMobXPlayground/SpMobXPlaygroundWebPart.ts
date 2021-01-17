@@ -8,8 +8,7 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SpMobXPlaygroundWebPartStrings';
-import SpMobXPlayground from './components/SpMobXPlayground';
-import { ISpMobXPlaygroundProps } from './components/ISpMobXPlaygroundProps';
+import {SpMobXPlayground, ISpMobXPlaygroundProps} from './components/SpMobXPlayground';
 
 export interface ISpMobXPlaygroundWebPartProps {
   description: string;
