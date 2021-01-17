@@ -1,4 +1,4 @@
 export interface ISpace {
-  id: string;
+  id?: string;
   title: string;
 }

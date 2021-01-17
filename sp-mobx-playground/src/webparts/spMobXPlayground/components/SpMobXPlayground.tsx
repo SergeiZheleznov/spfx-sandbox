@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { AddSpaceForm } from '../../../components/AddSpaceForm';
 import { SpaceList } from '../../../containers/SpaceList';
 import { AppContext } from '../../../contexts/AppContext';
+import { ISpace } from '../../../interfaces';
 import { SpaceService } from '../../../services';
 import { SpaceStore } from '../../../stores/SpaceStore';
 
@@ -14,12 +16,16 @@ export interface ISpMobXPlaygroundProps {
 export const SpMobXPlayground: React.FC<ISpMobXPlaygroundProps> = (props)=> {
     const spaceService = new SpaceService();
     const spaceStore = new SpaceStore(spaceService);
-    
-    return <>
-      SpMobXPlayground
-      <AppContext.Provider value={{spaceStore}}>
-        <h1>AppContext</h1>
-        <SpaceList />
-      </AppContext.Provider>
-    </>;
+
+    const onFormSubmit = async(space: ISpace) => {
+      await spaceStore.addSpace(space);
+    }
+
+    return <AppContext.Provider value={{spaceStore}}>
+      <AddSpaceForm onFormSubmit={onFormSubmit} />
+      <hr/>
+      <SpaceList />
+      <hr/>
+
+    </AppContext.Provider>;
 };

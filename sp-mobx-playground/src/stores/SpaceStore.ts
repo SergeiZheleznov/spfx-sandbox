@@ -20,6 +20,9 @@ export class SpaceStore implements ISpaceStore {
     try {
       const {spaceService} = this;
       const result = await spaceService.add(spaceToAdd);
+      if (result) {
+        this.spaces.push(result);
+      }
       return Promise.resolve(undefined);
     } catch (error) {
       console.log(error);
@@ -30,7 +33,9 @@ export class SpaceStore implements ISpaceStore {
     try {
       const {spaceService} = this;
       const result = await spaceService.remove(spaceToRemove);
-      console.log(`removeSpace: ${result}`);
+      if (result) {
+        this.spaces = this.spaces.filter(el=>el.id !== spaceToRemove.id);
+      }
       return Promise.resolve(undefined);
     } catch (error) {
       console.log(error);
