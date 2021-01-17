@@ -1,0 +1,12 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.11.0",
+    "libraryName": "sp-mobx-playground",
+    "libraryId": "c3deeebb-0114-479a-9ed5-ae3993c5f7c5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "isCreatingSolution": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

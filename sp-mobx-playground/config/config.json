@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "sp-mob-x-playground-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/spMobXPlayground/SpMobXPlaygroundWebPart.js",
+          "manifest": "./src/webparts/spMobXPlayground/SpMobXPlaygroundWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SpMobXPlaygroundWebPartStrings": "lib/webparts/spMobXPlayground/loc/{locale}.js"
+  }
+}
