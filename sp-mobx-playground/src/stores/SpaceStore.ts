@@ -1,4 +1,4 @@
-import {makeAutoObservable} from 'mobx';
+import {action, makeObservable, observable, computed} from 'mobx';
 import { ISpace, ISpaceService } from '../interfaces';
 
 export interface ISpaceStore {
@@ -6,13 +6,25 @@ export interface ISpaceStore {
   addSpace: (spaceToAdd: ISpace) => Promise<void>;
   removeSpace: (spaceToRemove: ISpace) => Promise<void>;
   fetchSpaces: ()=> Promise<void>;
+  total: number;
 }
 
 export class SpaceStore implements ISpaceStore {
 
   constructor(private spaceService: ISpaceService){
-    makeAutoObservable(this);
+    makeObservable(this,
+      {
+        spaces: observable,
+        addSpace: action,
+        removeSpace: action,
+        fetchSpaces: action,
+        total: computed,
+      });
   }
+
+  public get total(): number {
+    return this.spaces.length;
+  } 
   
   public spaces: ISpace[] = [];
 
